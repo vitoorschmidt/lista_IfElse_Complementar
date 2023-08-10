@@ -1,8 +1,9 @@
 <meta charset="UTF-8" />
 <script>
-    // Problema: Classificação do Produto
-    /*
-    Faça um script que peça para o usuário informar o código de um determinado produto e mostre a sua classificação, considerando os seguintes dados de entrada e a sua mensagem correspondente:
+  // Problema: Classificação do Produto
+  /*
+    Faça um script que peça para o usuário informar o código de um determinado produto e mostre a sua classificação, considerando os seguintes dados de entrada e a 
+    sua mensagem correspondente:
     - Código 1: Alimento não-perecível
     - Código 2, 3 ou 4: Alimento perecível
     - Código 5 ou 6: Vestuário
@@ -12,10 +13,36 @@
     - Qualquer outro código: Código inválido
     */
 
-    // Entrada
-    
-    // Processamento
+  const codigo = Number(prompt(`Informe o código do produto (1 ao 20)`));
 
-    // Saída
+
+  if (codigo == 1) {
+    alert(`Alimento não-perecível.`);
+  }
+
+  if (codigo == 2 || codigo == 3 || codigo == 4) {
+    alert(`Alimento perecível`);
+  }
+
+  if (codigo == 5 || codigo == 6) {
+    alert(`Vestuário`);
+  }
+
+  if (codigo == 7) {
+    alert(`Higiene pessoal`);
+  }
+
+  if (codigo == 8 || codigo == 9 || codigo == 10 || codigo == 11 || codigo == 12 || codigo == 13 || codigo == 14 || codigo == 15) {
+    alert(` Limpeza e Utensílios Domésticos`);
+  }
+
+  if (codigo == 16 || codigo == 17 || codigo == 18 || codigo == 19 || codigo == 20) {
+    alert(`Outros`);
+  }
+
+  else {
+    alert(`Código inválido`);
+  }
+
 
 </script>

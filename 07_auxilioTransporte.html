@@ -2,19 +2,39 @@
 <script>
     // Problema: Auxílio Transporte
     /*
-    Faça um script que pergunte ao funcionário quanto recebe de salário por mês. O programa deverá perguntar ao profissional se ele deseja receber auxílio transporte e deverá perguntar se ele utiliza veículo próprio para se locomover ao trabalho. 
+    Faça um script que pergunte ao funcionário quanto recebe de salário por mês. 
+    O programa deverá perguntar ao profissional se ele deseja receber auxílio transporte e deverá perguntar se ele utiliza veículo próprio para se locomover ao 
+    trabalho. 
     
-    - Se o funcionário deseja receber auxílio transporte ou utiliza veículo próprio, deverão ser descontados 6% (0.06) da remuneração mensal informada pelo funcionário.
+    - Se o funcionário deseja receber auxílio transporte ou utiliza veículo próprio, deverão ser descontados 6% (0.06) da remuneração mensal informada pelo 
+    funcionário.
     - Ainda, se utilizar veículo próprio, a empresa fornecerá um adicional de R$ 200,00.
     - ou, caso utilize apenas o transporte público, a empresa fornecerá um adicional de R$ 150,00.
     
     Calcule e apresente em tela o desconto, se existente, e o salário final recebido pelo funcionário.
     */
 
-    // Entrada
-    
-    // Processamento
+    let salario = Number(prompt("Informe seu salário").trim().replace(",", "."));
+    const auxiliotransporte = prompt("Você deseja receber auxílio transporte? (S) ou (N)").trim().toUpperCase();
+    const transporteproprio = prompt("Você utiliza veículo próprio para se locomover ao trabalho? (S) ou (N)").trim().toUpperCase();;
 
-    // Saída
+    if (auxiliotransporte == "S") {
+        if (transporteproprio == "S" || transporteproprio == "N") {
+            const desconto = ((salario * 6) / 100);
+            salario = salario - desconto;
+            document.write(`O desconto será de R$${desconto} e o salário final seŕa de R$${salario}.`)
+        }
+    } else if (auxiliotransporte == "N") {
 
+        if (transporteproprio == "S" && auxiliotransporte == "N") {
+            salario = salario + 200;
+            document.write(`O aumento foi de R$200 e o salário final será de R$${salario}.`)
+        }
+        else if (transporteproprio == "N" && auxiliotransporte == "N") {
+            salario = salario + 150;
+            document.write(`O aumento foi de R$150 e o salário final será de R$${salario}.`)
+        }
+    } else {
+        alert("Algo deu errado, tente novamente!")
+    }
 </script>

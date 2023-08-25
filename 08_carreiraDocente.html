@@ -18,25 +18,21 @@
     Calcule os pontos e apresente a classificação do Professor.
     */
 
-    const anos = Number(prompt(`Informe quantos anos de carreira você tem:`).trim());
-    const pesquisa = Number(prompt(`Informe quantas pesquisas você já coordenou:`).trim());
-    const projetos = Number(prompt(`Informe quantos projetos você já orientou:`).trim());
-    const tcc = Number(prompt(`Informe quantos TCCs você já orientou:`).trim());
+    // Entrada
+    const anos = Number(prompt("Informe a quantidade de anos de carreira:"));
+    const projetosPesquisa = Number(prompt("Informe a quantidade de Projetos de Pesquisa que já coordenou:"));
+    const projetosExtensao = Number(prompt("Informe a quantidade de Projetos de Extensão que já orientou:"));
+    const tccs = Number(prompt("Informe a quantidade de TCCs que já orientou:"));
 
-    const anosPontos = (anos * 2.5);
-    const pesquisaPontos = (pesquisa * 5);
-    const projetosPontos = (projetos * 5);
-    const tccPontos = (tcc * 3);
-    const totalPontos = (((anosPontos + pesquisaPontos) + projetosPontos) + tccPontos);
+    // Processamento
+    const pontos = (anos * 2.5) + (projetosPesquisa * 5) + (projetosExtensao * 5) + (tccs * 3);
 
-    if (totalPontos <= 30) {
-        alert(`CONVIDADO!`);
+    // Saída
+    if (pontos <= 30) {
+        alert("CONVIDADO");
+    } else if (pontos <= 50) {
+        alert("AGREGADO");
+    } else {
+        alert("TITULAR");
     }
-    else if (totalPontos > 30 && totalPontos <= 50) {
-        alert(`AGREGADO!`);
-    }
-    else {
-        alert(`TITULAR!`);
-    }
-    
 </script>

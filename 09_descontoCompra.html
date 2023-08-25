@@ -11,20 +11,25 @@
     Calcule e apresente o preço final do computador de acordo com a Forma de Pagamento.
     */
 
-    const valorComputador = Number(prompt(`Informe o valor do computador:`).trim().replace(",", "."));
-    const pagamento = prompt(`Informe a forma de pagamento: sendo B-boleto, D-dinheiro e P-pix`).trim().toLocaleLowerCase();
+    // Entrada
+    const valor = Number(prompt("Informe o valor do computador:").trim().replace(",", "."));
+    const formaPagamento = prompt("Informe a forma de pagamento (B - Boleto, D - Dinheiro, P - PIX):").trim().toUpperCase();
 
-    if (pagamento === 'b') {
-        const precoDesconto1 = valorComputador - (valorComputador * 0.03);
-        alert(`O valor do computador será R$ ${precoDesconto1.toFixed(2).replace(".", ",")}.`);
+    // Processamento
+    let valorFinal = 0;
+    if (formaPagamento == "B") {
+        valorFinal = valor - (valor * 3 / 100);
     }
-    else if (pagamento === 'd') {
-        const precoDesconto2 = valorComputador - (valorComputador * 0.05);
-        alert(`O valor do computador será R$ ${precoDesconto2.toFixed(2).replace(".", ",")}.`);
+    else if (formaPagamento == "D") {
+        valorFinal = valor - (valor * 5 / 100);
+    }
+    else if (formaPagamento == "P") {
+        valorFinal = valor - (valor * 10 / 100);
     }
     else {
-        const precoDesconto3 = valorComputador - (valorComputador * 0.10);
-        alert(`O valor do computador será R$ ${precoDesconto3.toFixed(2).replace(".", ",")}.`);
+        alert("Forma de pagamento inválida!");
     }
+
+    // Saída
 
 </script>
